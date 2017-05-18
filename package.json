@@ -37,7 +37,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.18.0",
-    "body-parser": "^1.14.2",
+    "body-parser": "^1.17.2",
     "broccoli-asset-rev": "^2.4.5",
     "broccoli-export-text": "0.0.2",
     "broccoli-serviceworker": "0.1.6",
