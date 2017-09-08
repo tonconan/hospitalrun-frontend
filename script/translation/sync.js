@@ -34,7 +34,7 @@ for (let language of allTranslations) {
 function getDirectories(srcpath) {
   return fs.readdirSync(srcpath).filter((file) => {
     return fs.statSync(path.join(srcpath, file)).isDirectory();
-  });
+  }
 }
 
 function recursiveSortObjectKeys(obj){
@@ -44,7 +44,7 @@ function recursiveSortObjectKeys(obj){
     let sortedObj = {};
     Object.keys(obj).sort().forEach((objKey) => {
       sortedObj[objKey] = recursiveSortObjectKeys(obj[objKey]);
-    });
+    }
     return sortedObj;
   } else if (obj.constructor === Array) {
     return obj.map(recursiveSortObjectKeys);
@@ -60,7 +60,7 @@ function stringifyObjectWithoutQuotes(obj) {
 function writeToFile(fileName, content) {
   fs.writeFile(fileName, content, (err) => {
     if(err) { return console.error(err); }
-  });
+  }
 }
 
 function recursiveSyncTranslation(src, dst) {
@@ -68,7 +68,7 @@ function recursiveSyncTranslation(src, dst) {
     let syncedObject = {};
     Object.keys(src).forEach((objKey) => {
       syncedObject[objKey] = recursiveSyncTranslation(src[objKey], dst[objKey] || emptySameType(src[objKey]));
-    });
+    }
     return syncedObject;
   } else if (src.constructor === Array) {
     let syncedArray = [];
